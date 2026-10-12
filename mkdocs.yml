@@ -1,0 +1,108 @@
+site_name: harbor-lab
+site_description: Plateforme de gouvernance des images de conteneurs — étude de cas
+site_url: https://naqa92-portfolio-projects.github.io/harbor-docs/
+repo_url: https://github.com/naqa92-portfolio-projects/harbor-docs
+repo_name: harbor-docs
+edit_uri: edit/main/docs/
+
+validation:
+  anchors: warn
+  unrecognized_links: warn
+
+nav:
+  - Accueil: index.md
+  - Architecture: architecture.md
+  - Modèle de menace: modele-de-menace.md
+  - Décisions:
+      - decisions/index.md
+      - decisions/0001-format-signature-replication.md
+      - decisions/0002-kyverno-cel.md
+      - decisions/0003-kubescape.md
+      - decisions/0004-dependency-track-dt-bridge.md
+      - decisions/0005-opentofu-goharbor.md
+      - decisions/0006-miroir-transparent-niveaux-confiance.md
+      - decisions/0007-signature-keyless.md
+      - decisions/0008-divergence-grype-trivy.md
+  - Démo: demo.md
+  - Ce qui a cassé: incidents.md
+  - Limites connues: limites.md
+  - Questions d'entretien: faq.md
+
+theme:
+  name: material
+  language: fr
+  features:
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: grey
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Mode clair
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: fr
+          default: true
+          name: Français
+          build: true
+        - locale: en
+          name: English
+          build: true
+          site_description: Container image governance platform — case study
+          nav_translations:
+            Accueil: Home
+            Modèle de menace: Threat model
+            Décisions: Decisions
+            Démo: Demo
+            Ce qui a cassé: What broke
+            Limites connues: Known limits
+            Questions d'entretien: Interview questions
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: false
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      toc_depth: 3
+      permalink: "#"
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/naqa92-portfolio-projects/harbor-lab
