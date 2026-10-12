@@ -836,7 +836,7 @@
   <span class="md-ellipsis">
     
   
-    What broke
+    Lessons learned
   
 
     
@@ -863,7 +863,7 @@
   <span class="md-ellipsis">
     
   
-    Known limits
+    Next steps
   
 
     
@@ -1059,7 +1059,7 @@
 <h2 id="trade-offs-and-cost">Trade-offs and cost<a class="headerlink" href="#trade-offs-and-cost" title="Permanent link">#</a></h2>
 <ul>
 <li>The <code>dhi.io</code> proxy cache credential and the webhook token have no write-only attribute: they are the secrets present in the encrypted state.</li>
-<li>The provider does not detect every manual change (a replication filter edited in the UI does not show as drift; <code>-replace</code> is needed). See <a href="../../incidents/#the-harbor-provider-does-not-see-filter-drift">What broke</a>.</li>
+<li>The provider does not detect every manual change (a replication filter edited in the UI does not show as drift; <code>-replace</code> is needed). See <a href="../../incidents/#replication-filter-drift-invisible-to-opentofu">Lessons learned</a>.</li>
 <li>Rotating a robot secret requires bumping <code>secret_wo_version</code>.</li>
 </ul>
 <h2 id="what-would-make-me-change-my-mind">What would make me change my mind<a class="headerlink" href="#what-would-make-me-change-my-mind" title="Permanent link">#</a></h2>

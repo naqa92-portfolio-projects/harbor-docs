@@ -834,7 +834,7 @@
   <span class="md-ellipsis">
     
   
-    Ce qui a cassé
+    Retours d'expérience
   
 
     
@@ -861,7 +861,7 @@
   <span class="md-ellipsis">
     
   
-    Limites connues
+    Prochaines étapes
   
 
     
@@ -1091,7 +1091,7 @@
 </table>
 <p>Seuls les administrateurs de la plateforme (cluster-admin et Argo CD, qui synchronise les labels depuis Git) choisissent un niveau. Quelqu'un qui peut modifier un namespace peut le placer en <code>workload</code>, mais ne peut ni retirer le label, ni le changer, ni choisir <code>platform</code> (policy <code>tier-label</code>).</p>
 <div class="admonition note">
-<p class="admonition-title">Une limite honnête</p>
+<p class="admonition-title">À noter</p>
 <p>Les règles de signature éditeur pour Cilium et Argo CD ne s'appliquent que si ces images tournent dans un namespace <code>platform</code>. Ici, elles tournent uniquement dans les namespaces exclus <code>cilium</code> et <code>argocd</code>. En pratique, seules les images Kyverno (Policy Reporter par exemple) rencontrent cette règle.</p>
 </div>
 <h2 id="namespaces-de-bootstrap-une-exclusion-assumee">Namespaces de bootstrap : une exclusion assumée<a class="headerlink" href="#namespaces-de-bootstrap-une-exclusion-assumee" title="Permanent link">#</a></h2>
@@ -1151,8 +1151,8 @@
 <td><strong>Corrigé</strong> : la CA porte un <code>keyUsage</code> critique, la vérification stricte reste active</td>
 </tr>
 <tr>
-<td><code>kubectl debug</code> contournait l'admission</td>
-<td>Un conteneur éphémère échappait aux policies workload</td>
+<td>Couverture des conteneurs éphémères (<code>kubectl debug</code>)</td>
+<td>Un conteneur éphémère doit passer par les mêmes policies qu'un pod</td>
 <td><strong>Corrigé</strong> : les policies couvrent aussi <code>pods/ephemeralcontainers</code></td>
 </tr>
 </tbody>

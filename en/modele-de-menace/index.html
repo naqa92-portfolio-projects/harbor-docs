@@ -834,7 +834,7 @@
   <span class="md-ellipsis">
     
   
-    What broke
+    Lessons learned
   
 
     
@@ -861,7 +861,7 @@
   <span class="md-ellipsis">
     
   
-    Known limits
+    Next steps
   
 
     
@@ -1091,7 +1091,7 @@
 </table>
 <p>Only platform administrators (cluster admins and Argo CD, which syncs labels from Git) choose a tier. Someone allowed to edit a namespace can put it in <code>workload</code>, but can neither remove the label, change it, nor choose <code>platform</code> (policy <code>tier-label</code>).</p>
 <div class="admonition note">
-<p class="admonition-title">An honest limit</p>
+<p class="admonition-title">Worth noting</p>
 <p>The vendor-signature rules for Cilium and Argo CD only apply when those images run in a <code>platform</code> namespace. Here they only run in the excluded <code>cilium</code> and <code>argocd</code> namespaces. In practice, only Kyverno's images (Policy Reporter, for instance) meet this rule.</p>
 </div>
 <h2 id="bootstrap-namespaces-an-accepted-exclusion">Bootstrap namespaces: an accepted exclusion<a class="headerlink" href="#bootstrap-namespaces-an-accepted-exclusion" title="Permanent link">#</a></h2>
@@ -1151,8 +1151,8 @@
 <td><strong>Fixed</strong>: the CA carries a critical <code>keyUsage</code>, strict verification stays on</td>
 </tr>
 <tr>
-<td><code>kubectl debug</code> bypassed admission</td>
-<td>An ephemeral container escaped the workload policies</td>
+<td>Ephemeral container coverage (<code>kubectl debug</code>)</td>
+<td>An ephemeral container must go through the same policies as a pod</td>
 <td><strong>Fixed</strong>: the policies also cover <code>pods/ephemeralcontainers</code></td>
 </tr>
 </tbody>

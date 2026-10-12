@@ -868,7 +868,7 @@
   <span class="md-ellipsis">
     
   
-    What broke
+    Lessons learned
   
 
     
@@ -895,7 +895,7 @@
   <span class="md-ellipsis">
     
   
-    Known limits
+    Next steps
   
 
     
@@ -1181,9 +1181,9 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="admonition-title">Accepted limit</p>
-<p>The <code>demo:vex</code> scenario proves that the VEX is accepted and processed, <strong>not</strong> that every Debian flaw shows as "not affected". Dependency-Track does not yet match Debian source and binary packages (upstream bug). See <a href="../limites/">Known limits</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Worth noting</p>
+<p>The <code>demo:vex</code> scenario proves that the VEX is accepted and processed, <strong>not</strong> that every Debian flaw shows as "not affected". Dependency-Track does not yet match Debian source and binary packages (upstream change tracked). See <a href="../limites/">Next steps</a>.</p>
 </div>
 <h2 id="recorded-walkthroughs">Recorded walkthroughs<a class="headerlink" href="#recorded-walkthroughs" title="Permanent link">#</a></h2>
 <p>Three walkthroughs were recorded on the platform, with 20 Argo CD Applications synced and healthy.</p>
@@ -1194,18 +1194,18 @@
 <h3 id="p2-follow-an-image-from-the-golden-path-to-cve-triage">P2 — Follow an image from the golden path to CVE triage<a class="headerlink" href="#p2-follow-an-image-from-the-golden-path-to-cve-triage" title="Permanent link">#</a></h3>
 <p>In Harbor, the <code>hello-java</code> image is signed and carries four accessories: the signature, two SBOMs and the provenance.</p>
 <p><img alt="Signed hello-java artifact in Harbor" src="../../assets/demo/P2-03.png" /></p>
-<p>The provenance accessory has the type <code>https://slsa.dev/provenance/v1</code>. Harbor shows them all as <code>signature.cosign</code>, a known display limit.</p>
+<p>The provenance accessory has the type <code>https://slsa.dev/provenance/v1</code>. Harbor shows them all as <code>signature.cosign</code>, a display quirk.</p>
 <p><img alt="Actual accessory type: SLSA v1 provenance" src="../../assets/demo/P2-03c.png" /></p>
 <p>In Dependency-Track, the <code>hello-java</code> project lists 1,312 components, those of the SBOM attested at build time.</p>
 <p><img alt="Components of the attested SBOM in Dependency-Track" src="../../assets/demo/P2-05.png" /></p>
-<p>For <code>golden/python</code>, no Debian CVE is listed: that is the upstream limit described above, not an absence of flaws.</p>
+<p>For <code>golden/python</code>, no Debian CVE is listed: that is the upstream change described above, not an absence of flaws.</p>
 <p><img alt="No Debian CVE listed for golden/python" src="../../assets/demo/P2-fin.png" /></p>
 <h3 id="p3-spot-a-shell-in-a-container-from-grafana">P3 — Spot a shell in a container from Grafana<a class="headerlink" href="#p3-spot-a-shell-in-a-container-from-grafana" title="Permanent link">#</a></h3>
 <p>The <em>image posture</em> dashboard shows CVEs by severity before and after VEX, with their source, the share of signed and attested running images, admission denials and runtime alerts.</p>
 <p><img alt="Image posture dashboard" src="../../assets/demo/P3-03.png" /></p>
 <p>In VictoriaLogs, the Kubescape event names the pod targeted by the demo.</p>
 <p><img alt="Kubescape alert detail in Grafana Explore" src="../../assets/demo/P3-06h.png" /></p>
-<p>In Policy Reporter, the deprecated base shows as <code>fail</code> rather than <code>warn</code>: a limit of CEL policies, documented in <a href="../decisions/0002-kyverno-cel/">ADR 0002</a>.</p>
+<p>In Policy Reporter, the deprecated base shows as <code>fail</code> rather than <code>warn</code>: a behaviour of CEL policies, documented in <a href="../decisions/0002-kyverno-cel/">ADR 0002</a>.</p>
 <p><img alt="PolicyReport of the deprecated base" src="../../assets/demo/P3-07d.png" /></p>
 
 
@@ -1259,13 +1259,13 @@
         
         
           
-          <a href="../incidents/" class="md-footer__link md-footer__link--next" aria-label="Next: What broke">
+          <a href="../incidents/" class="md-footer__link md-footer__link--next" aria-label="Next: Lessons learned">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                What broke
+                Lessons learned
               </div>
             </div>
             <div class="md-footer__button md-icon">

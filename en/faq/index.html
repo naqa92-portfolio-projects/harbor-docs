@@ -719,7 +719,7 @@
   <span class="md-ellipsis">
     
   
-    What broke
+    Lessons learned
   
 
     
@@ -746,7 +746,7 @@
   <span class="md-ellipsis">
     
   
-    Known limits
+    Next steps
   
 
     
@@ -848,10 +848,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-broke-what-i-learned" class="md-nav__link">
+  <a href="#lessons-learned" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What broke, what I learned
+        Lessons learned
       
     </span>
   </a>
@@ -915,10 +915,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-broke-what-i-learned" class="md-nav__link">
+  <a href="#lessons-learned" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What broke, what I learned
+        Lessons learned
       
     </span>
   </a>
@@ -997,18 +997,18 @@
 <summary>Trivy and Grype report different CVEs: which one do you trust?</summary>
 <p>Neither alone. Trivy is the gate at build time and in Harbor, Grype is the cluster's view, and triage happens in Dependency-Track. The dashboard labels each count with its source and never adds up two scanners. → <a href="../decisions/0008-divergence-grype-trivy/">ADR 0008</a></p>
 </details>
-<h2 id="what-broke-what-i-learned">What broke, what I learned<a class="headerlink" href="#what-broke-what-i-learned" title="Permanent link">#</a></h2>
+<h2 id="lessons-learned">Lessons learned<a class="headerlink" href="#lessons-learned" title="Permanent link">#</a></h2>
 <details class="question">
 <summary>Which bug taught you the most?</summary>
-<p>Harbor's proxy cache returning a different digest than Docker Hub. The explanation came from Harbor's own code: for a multi-arch index, it waits for the other architectures, then pushes a trimmed index with a new digest. Lesson: read upstream code rather than stack hypotheses. → <a href="../incidents/">What broke</a></p>
+<p>Harbor's proxy cache returning a different digest than Docker Hub. The explanation came from Harbor's own code: for a multi-arch index, it waits for the other architectures, then pushes a trimmed index with a new digest. Lesson: read upstream code rather than stack hypotheses. → <a href="../incidents/">Lessons learned</a></p>
 </details>
 <details class="question">
-<summary>A flaw found in review?</summary>
-<p><code>kubectl debug</code> could add an ephemeral container that escaped admission: the policies did not cover the <code>pods/ephemeralcontainers</code> subresource. Fixed and tested. A policy must be tested against every way of running code. → <a href="../incidents/#kubectl-debug-bypassed-admission">What broke</a></p>
+<summary>Something caught in review?</summary>
+<p>The security review, before delivery, checked that ephemeral containers added with <code>kubectl debug</code> go through admission. The policies were extended to the <code>pods/ephemeralcontainers</code> subresource, and a Chainsaw regression scenario checks it. A policy must be tested against every way of running code. → <a href="../incidents/#admission-coverage-of-ephemeral-containers">Lessons learned</a></p>
 </details>
 <details class="question">
-<summary>What would you change if you started over?</summary>
-<p>I would handle restart recovery from the start (OpenBao auto-unseal) instead of documenting a full rebuild. And I would open the automated pull requests with a GitHub App token from day one, so CI runs on them. → <a href="../limites/">Known limits</a></p>
+<summary>What are the next steps?</summary>
+<p>OpenBao auto-unseal, to recover from a node stop without a rebuild, and opening the automated pull requests with a GitHub App token, so CI runs on them. Then the roadmap: air-gap bundle and a comparison with Gatekeeper. → <a href="../limites/">Next steps</a></p>
 </details>
 <details class="question">
 <summary>How do you know it works?</summary>
@@ -1049,7 +1049,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../limites/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Known limits">
+          <a href="../limites/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Next steps">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1059,7 +1059,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Known limits
+                Next steps
               </div>
             </div>
           </a>

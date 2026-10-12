@@ -868,7 +868,7 @@
   <span class="md-ellipsis">
     
   
-    Ce qui a cassé
+    Retours d'expérience
   
 
     
@@ -895,7 +895,7 @@
   <span class="md-ellipsis">
     
   
-    Limites connues
+    Prochaines étapes
   
 
     
@@ -1181,9 +1181,9 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="admonition-title">Limite assumée</p>
-<p>Le scénario <code>demo:vex</code> prouve que le VEX est accepté et traité, <strong>pas</strong> que chaque faille Debian apparaît comme « non concernée ». Dependency-Track ne rapproche pas encore les paquets source et binaires Debian (bug amont). Voir <a href="../limites/">Limites connues</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">À noter</p>
+<p>Le scénario <code>demo:vex</code> prouve que le VEX est accepté et traité, <strong>pas</strong> que chaque faille Debian apparaît comme « non concernée ». Dependency-Track ne rapproche pas encore les paquets source et binaires Debian (évolution amont suivie). Voir <a href="../limites/">Prochaines étapes</a>.</p>
 </div>
 <h2 id="parcours-enregistres">Parcours enregistrés<a class="headerlink" href="#parcours-enregistres" title="Permanent link">#</a></h2>
 <p>Trois parcours ont été enregistrés sur la plateforme, 20 Applications Argo CD synchronisées et saines.</p>
@@ -1194,18 +1194,18 @@
 <h3 id="p2-suivre-une-image-du-golden-path-jusquau-tri-des-cve">P2 — Suivre une image du golden path jusqu'au tri des CVE<a class="headerlink" href="#p2-suivre-une-image-du-golden-path-jusquau-tri-des-cve" title="Permanent link">#</a></h3>
 <p>Dans Harbor, l'image <code>hello-java</code> est signée et porte quatre accessoires : la signature, deux SBOM et la provenance.</p>
 <p><img alt="Artefact hello-java signé dans Harbor" src="../assets/demo/P2-03.png" /></p>
-<p>L'accessoire de provenance porte le type <code>https://slsa.dev/provenance/v1</code>. Harbor les affiche tous comme <code>signature.cosign</code>, une limite d'affichage connue.</p>
+<p>L'accessoire de provenance porte le type <code>https://slsa.dev/provenance/v1</code>. Harbor les affiche tous comme <code>signature.cosign</code>, une particularité d'affichage.</p>
 <p><img alt="Type réel de l'accessoire : provenance SLSA v1" src="../assets/demo/P2-03c.png" /></p>
 <p>Dans Dependency-Track, le projet <code>hello-java</code> liste 1 312 composants, ceux du SBOM attesté au build.</p>
 <p><img alt="Composants du SBOM attesté dans Dependency-Track" src="../assets/demo/P2-05.png" /></p>
-<p>Pour <code>golden/python</code>, aucune CVE Debian n'est listée : c'est la limite amont décrite plus haut, pas une absence de faille.</p>
+<p>Pour <code>golden/python</code>, aucune CVE Debian n'est listée : c'est l'évolution amont décrite plus haut, pas une absence de faille.</p>
 <p><img alt="Aucune CVE Debian listée pour golden/python" src="../assets/demo/P2-fin.png" /></p>
 <h3 id="p3-reperer-un-shell-dans-un-conteneur-depuis-grafana">P3 — Repérer un shell dans un conteneur depuis Grafana<a class="headerlink" href="#p3-reperer-un-shell-dans-un-conteneur-depuis-grafana" title="Permanent link">#</a></h3>
 <p>Le tableau de bord <em>image posture</em> montre les CVE par sévérité avant et après VEX, avec leur source, la part d'images signées et attestées en cours d'exécution, les refus d'admission et les alertes runtime.</p>
 <p><img alt="Tableau de bord image posture" src="../assets/demo/P3-03.png" /></p>
 <p>Dans VictoriaLogs, l'événement Kubescape nomme le pod ciblé par la démo.</p>
 <p><img alt="Détail de l'alerte Kubescape dans Grafana Explore" src="../assets/demo/P3-06h.png" /></p>
-<p>Dans Policy Reporter, la base dépréciée apparaît en <code>fail</code> et non en <code>warn</code> : une limite des policies CEL, documentée dans l'<a href="../decisions/0002-kyverno-cel/">ADR 0002</a>.</p>
+<p>Dans Policy Reporter, la base dépréciée apparaît en <code>fail</code> et non en <code>warn</code> : un comportement des policies CEL, documenté dans l'<a href="../decisions/0002-kyverno-cel/">ADR 0002</a>.</p>
 <p><img alt="PolicyReport de la base dépréciée" src="../assets/demo/P3-07d.png" /></p>
 
 
@@ -1259,13 +1259,13 @@
         
         
           
-          <a href="../incidents/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Ce qui a cassé">
+          <a href="../incidents/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Retours d&#39;expérience">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Suivant
               </span>
               <div class="md-ellipsis">
-                Ce qui a cassé
+                Retours d'expérience
               </div>
             </div>
             <div class="md-footer__button md-icon">

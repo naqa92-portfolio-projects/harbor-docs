@@ -31,7 +31,7 @@
     
     
       
-        <title>Known limits - harbor-lab</title>
+        <title>Next steps - harbor-lab</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#known-limits" class="md-skip">
+        <a href="#next-steps" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Known limits
+              Next steps
             
           </span>
         </div>
@@ -721,7 +721,7 @@
   <span class="md-ellipsis">
     
   
-    What broke
+    Lessons learned
   
 
     
@@ -757,7 +757,7 @@
   <span class="md-ellipsis">
     
   
-    Known limits
+    Next steps
   
 
     
@@ -775,7 +775,7 @@
   <span class="md-ellipsis">
     
   
-    Known limits
+    Next steps
   
 
     
@@ -801,10 +801,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-i-do-not-claim-to-cover" class="md-nav__link">
+  <a href="#scope-of-the-first-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What I do not claim to cover
+        Scope of the first version
       
     </span>
   </a>
@@ -812,10 +812,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#debt-after-the-first-version" class="md-nav__link">
+  <a href="#identified-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Debt after the first version
+        Identified improvements
       
     </span>
   </a>
@@ -834,10 +834,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#upstream-issues-tracked" class="md-nav__link">
+  <a href="#upstream-changes-tracked" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Upstream issues tracked
+        Upstream changes tracked
       
     </span>
   </a>
@@ -906,10 +906,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-i-do-not-claim-to-cover" class="md-nav__link">
+  <a href="#scope-of-the-first-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What I do not claim to cover
+        Scope of the first version
       
     </span>
   </a>
@@ -917,10 +917,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#debt-after-the-first-version" class="md-nav__link">
+  <a href="#identified-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Debt after the first version
+        Identified improvements
       
     </span>
   </a>
@@ -939,10 +939,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#upstream-issues-tracked" class="md-nav__link">
+  <a href="#upstream-changes-tracked" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Upstream issues tracked
+        Upstream changes tracked
       
     </span>
   </a>
@@ -969,60 +969,59 @@
   
 
 
-<h1 id="known-limits">Known limits<a class="headerlink" href="#known-limits" title="Permanent link">#</a></h1>
-<p>What the platform does not do, or does imperfectly. I would rather say it here than have it discovered in an interview.</p>
-<h2 id="what-i-do-not-claim-to-cover">What I do not claim to cover<a class="headerlink" href="#what-i-do-not-claim-to-cover" title="Permanent link">#</a></h2>
+<h1 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h1>
+<p>The scope of the first version, and what I would do next. Each item says why it matters and which direction to take.</p>
+<h2 id="scope-of-the-first-version">Scope of the first version<a class="headerlink" href="#scope-of-the-first-version" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>High availability</strong>: a single kind node, one instance per database. The project demonstrates a governance chain, not production infrastructure.</li>
-<li><strong>Recovery after a node stop</strong>: after the node stops, OpenBao comes back sealed and some controllers do not reconverge on their own. Recovery is a full rebuild, about 15 minutes.</li>
-<li><strong>Trust in a regulated environment</strong>: keyless signing depends on public Sigstore, and write access to <code>main</code> is part of the chain of trust. A bank would use a KMS/HSM key and required reviews (<a href="../decisions/0007-signature-keyless/">ADR 0007</a>).</li>
-<li><strong>Bootstrap namespaces</strong>: <code>kube-system</code>, <code>cilium</code>, <code>argocd</code> and <code>kyverno</code> are excluded from admission, by design (<a href="../modele-de-menace/#bootstrap-namespaces-an-accepted-exclusion">threat model</a>).</li>
-<li><strong>Vendor signatures</strong>: the vendor-signature rules for Cilium and Argo CD never meet a real pod, since those components run in excluded namespaces.</li>
+<li><strong>Single-node demonstrator</strong>: one kind cluster, one instance per database. The subject is the governance chain; high availability belongs to the infrastructure that would host it.</li>
+<li><strong>Recovery by rebuild</strong>: after a node stop, the documented recovery is <code>task down &amp;&amp; task up</code> (about 15 minutes).</li>
+<li><strong>Public keyless signing</strong>: suited to a public repository; in a regulated environment, a KMS/HSM key or a private Sigstore takes over without changing the policies beyond the attestor (<a href="../decisions/0007-signature-keyless/">ADR 0007</a>).</li>
+<li><strong>Bootstrap namespaces excluded from admission</strong>, by design, to avoid any dependency loop (<a href="../modele-de-menace/#bootstrap-namespaces-an-accepted-exclusion">threat model</a>).</li>
 </ul>
-<h2 id="debt-after-the-first-version">Debt after the first version<a class="headerlink" href="#debt-after-the-first-version" title="Permanent link">#</a></h2>
+<h2 id="identified-improvements">Identified improvements<a class="headerlink" href="#identified-improvements" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
 <th>Topic</th>
-<th>Why it matters</th>
+<th>Why</th>
 <th>Direction</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Re-pin pull requests run no CI</td>
-<td>Opened with <code>GITHUB_TOKEN</code>, they merge digest changes without automatic checks</td>
+<td>CI on re-pin pull requests</td>
+<td>Pull requests opened by workflows with <code>GITHUB_TOKEN</code> do not trigger CI</td>
 <td>Open them with a GitHub App token, then make checks required</td>
 </tr>
 <tr>
-<td>Unsigned tag after a failed build</td>
-<td>The push happens before scanning and signing; a failure leaves an unsigned tag a rerun does not re-sign</td>
-<td>Push by digest only after scanning and signing</td>
+<td>Publishing by digest</td>
+<td>Publishing the image only after scanning and signing simplifies reruns</td>
+<td>Push by digest once scanning and signing pass</td>
 </tr>
 <tr>
-<td><code>dt-bridge</code> delivery guarantees</td>
-<td>Forwarded-VEX state held in memory, no retry on failure, queue capped at 200 SBOMs</td>
-<td>Persist state, retry with backoff, let Harbor redeliver</td>
+<td><code>dt-bridge</code> delivery</td>
+<td>Today forwarded-VEX state lives in memory and the queue is capped at 200 SBOMs</td>
+<td>Persist state, retry with backoff, rely on Harbor redelivery</td>
 </tr>
 <tr>
-<td><code>error</code> results in Policy Reporter</td>
-<td>Every namespace carries one <code>error</code> result with no visible cause</td>
-<td>Identify the faulty policy/resource pair</td>
+<td>OpenBao auto-unseal</td>
+<td>Would allow recovery after a node stop without a rebuild</td>
+<td>Transit or static unseal, controller restarts gated on readiness</td>
 </tr>
 <tr>
-<td>Deprecated base shown as <code>fail</code></td>
-<td>Reports say <code>fail</code> where admission says "warning"</td>
-<td>Align the report with the admission outcome</td>
+<td>Policy Reporter results</td>
+<td>One <code>error</code> result shows per namespace for the image policies; the deprecated base shows as <code>fail</code></td>
+<td>Identify the policy/resource pair involved; align the report with the admission outcome</td>
 </tr>
 <tr>
-<td>Dashboard ergonomics</td>
-<td>Truncated titles, runtime alerts dominated by noise, Dependency-Track projects flooded with versions</td>
-<td>Layout pass, rule filtering, deactivating old versions</td>
+<td>Dashboard</td>
+<td>Truncated titles, runtime alerts to filter, old versions to archive in Dependency-Track</td>
+<td>Layout and filtering pass</td>
 </tr>
 <tr>
-<td>Grafana memory headroom</td>
-<td>Explore on VictoriaLogs peaks at ~640 Mi for a 768 Mi limit</td>
-<td>Re-measure after every upgrade</td>
+<td>Vendor signatures at admission</td>
+<td>Cilium and Argo CD run in excluded namespaces</td>
+<td>Verify their images at bootstrap, or move them out of the excluded tier once Kyverno is up</td>
 </tr>
 </tbody>
 </table>
@@ -1043,7 +1042,7 @@
 </tr>
 <tr>
 <td>Gatekeeper / Rego comparison</td>
-<td>Many banks already run OPA Gatekeeper; the choice of Kyverno should be backed up</td>
+<td>Many banks already use OPA Gatekeeper</td>
 <td>Rewrite the workload rules in Rego (with Ratify for signatures) and compare expressiveness, test tooling and cost</td>
 </tr>
 <tr>
@@ -1053,21 +1052,16 @@
 </tr>
 <tr>
 <td>Charts relocated as OCI</td>
-<td>Helm charts come from upstream, outside Harbor governance</td>
+<td>Extend Harbor governance to Helm charts</td>
 <td>Relocate every chart into Harbor (signed, scanned, immutable)</td>
-</tr>
-<tr>
-<td>Restart tolerance</td>
-<td>See above</td>
-<td>OpenBao auto-unseal, controller restarts gated on readiness</td>
 </tr>
 </tbody>
 </table>
-<h2 id="upstream-issues-tracked">Upstream issues tracked<a class="headerlink" href="#upstream-issues-tracked" title="Permanent link">#</a></h2>
+<h2 id="upstream-changes-tracked">Upstream changes tracked<a class="headerlink" href="#upstream-changes-tracked" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Dependency-Track #6132 and #6957</strong>: matching Debian advisories (source packages) to the SBOM's binary packages. Would unlock flaw-by-flaw proof of the DHI VEX effect.</li>
-<li><strong>kyverno/sdk#125</strong> (fix #127): <code>kyverno test</code> deadlock. Would allow merging the test suites.</li>
-<li><strong>Dependency-Track #7094</strong>: native OpenVEX import. Would remove <code>dt-bridge</code>'s conversion module.</li>
+<li><strong>Dependency-Track #6132 and #6957</strong>: matching Debian advisories (source packages) to the SBOM's binary packages. Will make the effect of DHI VEX visible flaw by flaw.</li>
+<li><strong>kyverno/sdk#125</strong> (fix #127): will allow merging the <code>kyverno test</code> suites.</li>
+<li><strong>Dependency-Track #7094</strong>: native OpenVEX import; <code>dt-bridge</code>'s conversion module can then be removed.</li>
 </ul>
 
 
@@ -1104,7 +1098,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../incidents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: What broke">
+          <a href="../incidents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lessons learned">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1114,7 +1108,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                What broke
+                Lessons learned
               </div>
             </div>
           </a>

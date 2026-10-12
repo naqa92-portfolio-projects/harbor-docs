@@ -31,7 +31,7 @@
     
     
       
-        <title>Limites connues - harbor-lab</title>
+        <title>Prochaines étapes - harbor-lab</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#limites-connues" class="md-skip">
+        <a href="#prochaines-etapes" class="md-skip">
           Aller au contenu
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Limites connues
+              Prochaines étapes
             
           </span>
         </div>
@@ -721,7 +721,7 @@
   <span class="md-ellipsis">
     
   
-    Ce qui a cassé
+    Retours d'expérience
   
 
     
@@ -757,7 +757,7 @@
   <span class="md-ellipsis">
     
   
-    Limites connues
+    Prochaines étapes
   
 
     
@@ -775,7 +775,7 @@
   <span class="md-ellipsis">
     
   
-    Limites connues
+    Prochaines étapes
   
 
     
@@ -801,10 +801,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ce-que-je-ne-pretends-pas-couvrir" class="md-nav__link">
+  <a href="#perimetre-de-la-premiere-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ce que je ne prétends pas couvrir
+        Périmètre de la première version
       
     </span>
   </a>
@@ -812,10 +812,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dette-apres-la-premiere-version" class="md-nav__link">
+  <a href="#ameliorations-identifiees" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dette après la première version
+        Améliorations identifiées
       
     </span>
   </a>
@@ -834,10 +834,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problemes-amont-suivis" class="md-nav__link">
+  <a href="#evolutions-amont-suivies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problèmes amont suivis
+        Évolutions amont suivies
       
     </span>
   </a>
@@ -906,10 +906,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ce-que-je-ne-pretends-pas-couvrir" class="md-nav__link">
+  <a href="#perimetre-de-la-premiere-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ce que je ne prétends pas couvrir
+        Périmètre de la première version
       
     </span>
   </a>
@@ -917,10 +917,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dette-apres-la-premiere-version" class="md-nav__link">
+  <a href="#ameliorations-identifiees" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dette après la première version
+        Améliorations identifiées
       
     </span>
   </a>
@@ -939,10 +939,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problemes-amont-suivis" class="md-nav__link">
+  <a href="#evolutions-amont-suivies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problèmes amont suivis
+        Évolutions amont suivies
       
     </span>
   </a>
@@ -969,60 +969,59 @@
   
 
 
-<h1 id="limites-connues">Limites connues<a class="headerlink" href="#limites-connues" title="Permanent link">#</a></h1>
-<p>Ce que la plateforme ne fait pas, ou fait imparfaitement. Je préfère le dire ici plutôt que de le découvrir en entretien.</p>
-<h2 id="ce-que-je-ne-pretends-pas-couvrir">Ce que je ne prétends pas couvrir<a class="headerlink" href="#ce-que-je-ne-pretends-pas-couvrir" title="Permanent link">#</a></h2>
+<h1 id="prochaines-etapes">Prochaines étapes<a class="headerlink" href="#prochaines-etapes" title="Permanent link">#</a></h1>
+<p>Le périmètre de la première version, et ce que je ferais ensuite. Chaque point dit pourquoi il compte et dans quelle direction aller.</p>
+<h2 id="perimetre-de-la-premiere-version">Périmètre de la première version<a class="headerlink" href="#perimetre-de-la-premiere-version" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Haute disponibilité</strong> : un seul nœud kind, une instance par base de données. Le projet démontre une chaîne de gouvernance, pas une infrastructure de production.</li>
-<li><strong>Reprise après arrêt du nœud</strong> : après un arrêt du nœud, OpenBao revient scellé et certains contrôleurs ne reconvergent pas seuls. La reprise est une reconstruction complète, environ 15 minutes.</li>
-<li><strong>Confiance en environnement régulé</strong> : la signature keyless dépend du Sigstore public, et le droit d'écriture sur <code>main</code> fait partie de la chaîne de confiance. Une banque utiliserait une clé KMS/HSM et des revues obligatoires (<a href="../decisions/0007-signature-keyless/">ADR 0007</a>).</li>
-<li><strong>Namespaces de bootstrap</strong> : <code>kube-system</code>, <code>cilium</code>, <code>argocd</code> et <code>kyverno</code> sont exclus de l'admission, par conception (<a href="../modele-de-menace/#namespaces-de-bootstrap-une-exclusion-assumee">modèle de menace</a>).</li>
-<li><strong>Signatures éditeur</strong> : les règles de signature éditeur pour Cilium et Argo CD ne rencontrent jamais de vrai pod, puisque ces composants tournent dans des namespaces exclus.</li>
+<li><strong>Démonstrateur sur un seul nœud</strong> : un cluster kind, une instance par base de données. Le sujet est la chaîne de gouvernance ; la haute disponibilité relève de l'infrastructure qui l'hébergerait.</li>
+<li><strong>Reprise par reconstruction</strong> : après un arrêt du nœud, la reprise documentée est <code>task down &amp;&amp; task up</code> (environ 15 minutes).</li>
+<li><strong>Signature keyless publique</strong> : adaptée à un dépôt public ; en environnement régulé, une clé KMS/HSM ou un Sigstore privé prend le relais sans changer les policies au-delà de l'attesteur (<a href="../decisions/0007-signature-keyless/">ADR 0007</a>).</li>
+<li><strong>Namespaces de bootstrap exclus de l'admission</strong>, par conception, pour éviter toute boucle de dépendance (<a href="../modele-de-menace/#namespaces-de-bootstrap-une-exclusion-assumee">modèle de menace</a>).</li>
 </ul>
-<h2 id="dette-apres-la-premiere-version">Dette après la première version<a class="headerlink" href="#dette-apres-la-premiere-version" title="Permanent link">#</a></h2>
+<h2 id="ameliorations-identifiees">Améliorations identifiées<a class="headerlink" href="#ameliorations-identifiees" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
 <th>Sujet</th>
-<th>Pourquoi c'est important</th>
+<th>Pourquoi</th>
 <th>Direction</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Les PR de ré-épinglage ne lancent aucune CI</td>
-<td>Ouvertes avec <code>GITHUB_TOKEN</code>, elles fusionnent des changements de digest sans vérification automatique</td>
+<td>CI sur les PR de ré-épinglage</td>
+<td>Les PR ouvertes par les workflows avec <code>GITHUB_TOKEN</code> ne déclenchent pas de CI</td>
 <td>Les ouvrir avec un jeton de GitHub App, puis rendre les checks obligatoires</td>
 </tr>
 <tr>
-<td>Tag non signé après un build échoué</td>
-<td>Le push a lieu avant le scan et la signature ; un échec laisse un tag non signé qu'un nouveau passage ne re-signe pas</td>
-<td>Pousser par digest seulement après scan et signature</td>
+<td>Publication par digest</td>
+<td>Publier l'image seulement après scan et signature simplifie les relances</td>
+<td>Pousser par digest une fois le scan et la signature validés</td>
 </tr>
 <tr>
-<td>Garanties de livraison de <code>dt-bridge</code></td>
-<td>État des VEX transmis en mémoire, pas de nouvelle tentative en cas d'échec, file limitée à 200 SBOM</td>
-<td>Persister l'état, réessayer avec backoff, laisser Harbor relivrer</td>
+<td>Livraison de <code>dt-bridge</code></td>
+<td>Aujourd'hui l'état des VEX transmis est en mémoire et la file est bornée à 200 SBOM</td>
+<td>Persister l'état, réessayer avec backoff, s'appuyer sur la relivraison Harbor</td>
 </tr>
 <tr>
-<td>Résultats <code>error</code> dans Policy Reporter</td>
-<td>Chaque namespace porte un résultat <code>error</code> sans cause visible</td>
-<td>Identifier la paire policy/ressource fautive</td>
+<td>Descellement automatique d'OpenBao</td>
+<td>Permettrait de reprendre après un arrêt du nœud sans reconstruction</td>
+<td>Descellement Transit ou statique, redémarrages des contrôleurs conditionnés à leur disponibilité</td>
 </tr>
 <tr>
-<td>Base dépréciée affichée en <code>fail</code></td>
-<td>Les rapports disent <code>fail</code> quand l'admission dit « avertissement »</td>
-<td>Faire correspondre le rapport à l'issue de l'admission</td>
+<td>Résultats Policy Reporter</td>
+<td>Un résultat <code>error</code> apparaît par namespace pour les policies d'image ; la base dépréciée s'affiche en <code>fail</code></td>
+<td>Identifier la paire policy/ressource en cause ; aligner le rapport sur l'issue de l'admission</td>
 </tr>
 <tr>
-<td>Ergonomie du tableau de bord</td>
-<td>Titres tronqués, alertes runtime dominées par le bruit, projets Dependency-Track noyés sous les versions</td>
-<td>Passe de mise en page, filtrage des règles, désactivation des anciennes versions</td>
+<td>Tableau de bord</td>
+<td>Titres tronqués, alertes runtime à filtrer, anciennes versions à archiver dans Dependency-Track</td>
+<td>Passe de mise en page et de filtrage</td>
 </tr>
 <tr>
-<td>Marge mémoire de Grafana</td>
-<td>Explore sur VictoriaLogs monte à ~640 Mi pour une limite de 768 Mi</td>
-<td>Remesurer après chaque mise à jour</td>
+<td>Signatures éditeur à l'admission</td>
+<td>Cilium et Argo CD tournent dans des namespaces exclus</td>
+<td>Vérifier leurs images dès le bootstrap, ou les sortir du niveau exclu une fois Kyverno en place</td>
 </tr>
 </tbody>
 </table>
@@ -1043,7 +1042,7 @@
 </tr>
 <tr>
 <td>Comparaison Gatekeeper / Rego</td>
-<td>Beaucoup de banques ont déjà OPA Gatekeeper ; le choix de Kyverno doit être étayé</td>
+<td>Beaucoup de banques utilisent déjà OPA Gatekeeper</td>
 <td>Réécrire les règles workload en Rego (avec Ratify pour les signatures) et comparer expressivité, outillage de test et coût</td>
 </tr>
 <tr>
@@ -1053,21 +1052,16 @@
 </tr>
 <tr>
 <td>Charts relocalisés en OCI</td>
-<td>Les charts Helm viennent de l'amont, hors gouvernance Harbor</td>
+<td>Étendre la gouvernance Harbor aux charts Helm</td>
 <td>Relocaliser chaque chart dans Harbor (signé, scanné, immuable)</td>
-</tr>
-<tr>
-<td>Tolérance au redémarrage</td>
-<td>Voir plus haut</td>
-<td>Descellement automatique d'OpenBao, redémarrages des contrôleurs conditionnés à leur disponibilité</td>
 </tr>
 </tbody>
 </table>
-<h2 id="problemes-amont-suivis">Problèmes amont suivis<a class="headerlink" href="#problemes-amont-suivis" title="Permanent link">#</a></h2>
+<h2 id="evolutions-amont-suivies">Évolutions amont suivies<a class="headerlink" href="#evolutions-amont-suivies" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Dependency-Track #6132 et #6957</strong> : rapprochement des avis Debian (paquets source) avec les paquets binaires du SBOM. Débloquerait la preuve, faille par faille, de l'effet des VEX DHI.</li>
-<li><strong>kyverno/sdk#125</strong> (correctif #127) : blocage de <code>kyverno test</code>. Permettrait de regrouper les suites de tests.</li>
-<li><strong>Dependency-Track #7094</strong> : import OpenVEX natif. Supprimerait le module de conversion de <code>dt-bridge</code>.</li>
+<li><strong>Dependency-Track #6132 et #6957</strong> : rapprochement des avis Debian (paquets source) avec les paquets binaires du SBOM. Rendra visible, faille par faille, l'effet des VEX DHI.</li>
+<li><strong>kyverno/sdk#125</strong> (correctif #127) : permettra de regrouper les suites <code>kyverno test</code>.</li>
+<li><strong>Dependency-Track #7094</strong> : import OpenVEX natif ; le module de conversion de <code>dt-bridge</code> pourra être retiré.</li>
 </ul>
 
 
@@ -1104,7 +1098,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
         
           
-          <a href="../incidents/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Ce qui a cassé">
+          <a href="../incidents/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Retours d&#39;expérience">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1114,7 +1108,7 @@
                 Précédent
               </span>
               <div class="md-ellipsis">
-                Ce qui a cassé
+                Retours d'expérience
               </div>
             </div>
           </a>
