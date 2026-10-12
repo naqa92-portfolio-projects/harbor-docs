@@ -42,16 +42,16 @@ The questions I get asked, or should get asked, with the short answer I give out
 ??? question "Trivy and Grype report different CVEs: which one do you trust?"
     Neither alone. Trivy is the gate at build time and in Harbor, Grype is the cluster's view, and triage happens in Dependency-Track. The dashboard labels each count with its source and never adds up two scanners. → [ADR 0008](decisions/0008-divergence-grype-trivy.md)
 
-## What broke, what I learned
+## Lessons learned
 
 ??? question "Which bug taught you the most?"
-    Harbor's proxy cache returning a different digest than Docker Hub. The explanation came from Harbor's own code: for a multi-arch index, it waits for the other architectures, then pushes a trimmed index with a new digest. Lesson: read upstream code rather than stack hypotheses. → [What broke](incidents.md)
+    Harbor's proxy cache returning a different digest than Docker Hub. The explanation came from Harbor's own code: for a multi-arch index, it waits for the other architectures, then pushes a trimmed index with a new digest. Lesson: read upstream code rather than stack hypotheses. → [Lessons learned](incidents.md)
 
-??? question "A flaw found in review?"
-    `kubectl debug` could add an ephemeral container that escaped admission: the policies did not cover the `pods/ephemeralcontainers` subresource. Fixed and tested. A policy must be tested against every way of running code. → [What broke](incidents.md#kubectl-debug-bypassed-admission)
+??? question "Something caught in review?"
+    The security review, before delivery, checked that ephemeral containers added with `kubectl debug` go through admission. The policies were extended to the `pods/ephemeralcontainers` subresource, and a Chainsaw regression scenario checks it. A policy must be tested against every way of running code. → [Lessons learned](incidents.md#admission-coverage-of-ephemeral-containers)
 
-??? question "What would you change if you started over?"
-    I would handle restart recovery from the start (OpenBao auto-unseal) instead of documenting a full rebuild. And I would open the automated pull requests with a GitHub App token from day one, so CI runs on them. → [Known limits](limites.md)
+??? question "What are the next steps?"
+    OpenBao auto-unseal, to recover from a node stop without a rebuild, and opening the automated pull requests with a GitHub App token, so CI runs on them. Then the roadmap: air-gap bundle and a comparison with Gatekeeper. → [Next steps](limites.md)
 
 ??? question "How do you know it works?"
     143 bats tests, 17 Chainsaw scenarios on an ephemeral cluster, 8 `kyverno test` suites and 26 pytest tests, plus nine demo scenarios that only succeed if they observe the expected reaction. → [Demo](demo.md)

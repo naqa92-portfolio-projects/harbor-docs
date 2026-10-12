@@ -54,8 +54,8 @@ Everything runs on **a single local [kind](https://kind.sigs.k8s.io/) cluster**:
     1. [Architecture](architecture.md): the building blocks and the trust tiers.
     2. [Threat model](modele-de-menace.md): what admission checks, and the accepted exceptions.
     3. Two decisions: [keyless signing](decisions/0007-signature-keyless.md) and [Kyverno CEL](decisions/0002-kyverno-cel.md).
-    4. [What broke](incidents.md): upstream bugs worked around and what they taught me.
-    5. [Known limits](limites.md): what I do not claim to cover.
+    4. [Lessons learned](incidents.md): the problems met, how they were solved, what I take from them.
+    5. [Next steps](limites.md): the scope of the first version and what comes next.
 
 ## What I would show in a demo
 

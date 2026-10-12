@@ -42,16 +42,16 @@ Les questions qu'on me pose, ou qu'on devrait me poser, avec la réponse courte 
 ??? question "Trivy et Grype ne donnent pas les mêmes CVE : lequel croire ?"
     Aucun des deux seul. Trivy est la barrière au build et dans Harbor, Grype est la vue du cluster, et le tri se fait dans Dependency-Track. Le tableau de bord étiquette chaque compte avec sa source et n'additionne jamais deux scanners. → [ADR 0008](decisions/0008-divergence-grype-trivy.md)
 
-## Ce qui a cassé, ce que j'ai appris
+## Retours d'expérience
 
 ??? question "Quel bug t'a le plus appris ?"
-    Le cache proxy de Harbor qui renvoie un autre digest que Docker Hub. L'explication est venue du code de Harbor lui-même : pour un index multi-architecture, il attend les autres architectures, puis pousse un index réduit avec un nouveau digest. Leçon : lire le code amont plutôt qu'empiler des hypothèses. → [Ce qui a cassé](incidents.md)
+    Le cache proxy de Harbor qui renvoie un autre digest que Docker Hub. L'explication est venue du code de Harbor lui-même : pour un index multi-architecture, il attend les autres architectures, puis pousse un index réduit avec un nouveau digest. Leçon : lire le code amont plutôt qu'empiler des hypothèses. → [Retours d'expérience](incidents.md)
 
-??? question "Une faille trouvée en revue ?"
-    `kubectl debug` permettait d'ajouter un conteneur éphémère qui échappait à l'admission : les policies ne couvraient pas la sous-ressource `pods/ephemeralcontainers`. Corrigé et testé. Une policy se teste contre toutes les façons de faire tourner du code. → [Ce qui a cassé](incidents.md#kubectl-debug-contournait-ladmission)
+??? question "Un point détecté en revue ?"
+    La revue de sécurité, avant livraison, a vérifié que les conteneurs éphémères ajoutés par `kubectl debug` passent bien par l'admission. Les policies ont été étendues à la sous-ressource `pods/ephemeralcontainers`, et un scénario Chainsaw de régression le vérifie. Une policy se teste contre toutes les façons de lancer du code. → [Retours d'expérience](incidents.md#couverture-des-conteneurs-ephemeres-par-ladmission)
 
-??? question "Qu'est-ce que tu changerais si tu recommençais ?"
-    Je traiterais la reprise après redémarrage dès le début (descellement automatique d'OpenBao) au lieu de documenter une reconstruction complète. Et j'ouvrirais les PR automatiques avec un jeton de GitHub App dès le départ, pour que la CI tourne dessus. → [Limites connues](limites.md)
+??? question "Quelles sont les prochaines étapes ?"
+    Le descellement automatique d'OpenBao, pour reprendre après un arrêt du nœud sans reconstruction, et l'ouverture des PR automatiques avec un jeton de GitHub App, pour que la CI tourne dessus. Ensuite, la roadmap : bundle air-gap et comparaison avec Gatekeeper. → [Prochaines étapes](limites.md)
 
 ??? question "Comment sais-tu que ça marche ?"
     143 tests bats, 17 scénarios Chainsaw sur un cluster éphémère, 8 suites `kyverno test` et 26 tests pytest, plus neuf scénarios de démo qui ne réussissent que s'ils observent la réaction attendue. → [Démo](demo.md)

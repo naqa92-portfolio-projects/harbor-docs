@@ -35,7 +35,7 @@ The Crossplane providers for Harbor are abandoned or single-maintainer, and a Cr
 ## Trade-offs and cost
 
 - The `dhi.io` proxy cache credential and the webhook token have no write-only attribute: they are the secrets present in the encrypted state.
-- The provider does not detect every manual change (a replication filter edited in the UI does not show as drift; `-replace` is needed). See [What broke](../incidents.md#the-harbor-provider-does-not-see-filter-drift).
+- The provider does not detect every manual change (a replication filter edited in the UI does not show as drift; `-replace` is needed). See [Lessons learned](../incidents.md#replication-filter-drift-invisible-to-opentofu).
 - Rotating a robot secret requires bumping `secret_wo_version`.
 
 ## What would make me change my mind

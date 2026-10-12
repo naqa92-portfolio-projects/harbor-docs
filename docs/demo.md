@@ -36,8 +36,8 @@ Lancé dans un namespace sans label de niveau, n'importe quel scénario est refu
 | `demo:runtime-shell` | Ouvrir un shell dans un conteneur gouverné en cours d'exécution | Alerte Kubescape `Unexpected process launched` en quelques secondes, visible dans Grafana | La gouvernance ne s'arrête pas à l'admission |
 | `demo:vex` | Rejouer l'événement Harbor d'une image golden | Dependency-Track reçoit le SBOM attesté et accepte le VEX de l'éditeur (`COMPLETED`) | Le tri se fait sur ce qui a été signé au build |
 
-!!! warning "Limite assumée"
-    Le scénario `demo:vex` prouve que le VEX est accepté et traité, **pas** que chaque faille Debian apparaît comme « non concernée ». Dependency-Track ne rapproche pas encore les paquets source et binaires Debian (bug amont). Voir [Limites connues](limites.md).
+!!! note "À noter"
+    Le scénario `demo:vex` prouve que le VEX est accepté et traité, **pas** que chaque faille Debian apparaît comme « non concernée ». Dependency-Track ne rapproche pas encore les paquets source et binaires Debian (évolution amont suivie). Voir [Prochaines étapes](limites.md).
 
 ## Parcours enregistrés
 
@@ -55,7 +55,7 @@ Dans Harbor, l'image `hello-java` est signée et porte quatre accessoires : la s
 
 ![Artefact hello-java signé dans Harbor](assets/demo/P2-03.png)
 
-L'accessoire de provenance porte le type `https://slsa.dev/provenance/v1`. Harbor les affiche tous comme `signature.cosign`, une limite d'affichage connue.
+L'accessoire de provenance porte le type `https://slsa.dev/provenance/v1`. Harbor les affiche tous comme `signature.cosign`, une particularité d'affichage.
 
 ![Type réel de l'accessoire : provenance SLSA v1](assets/demo/P2-03c.png)
 
@@ -63,7 +63,7 @@ Dans Dependency-Track, le projet `hello-java` liste 1 312 composants, ceux du SB
 
 ![Composants du SBOM attesté dans Dependency-Track](assets/demo/P2-05.png)
 
-Pour `golden/python`, aucune CVE Debian n'est listée : c'est la limite amont décrite plus haut, pas une absence de faille.
+Pour `golden/python`, aucune CVE Debian n'est listée : c'est l'évolution amont décrite plus haut, pas une absence de faille.
 
 ![Aucune CVE Debian listée pour golden/python](assets/demo/P2-fin.png)
 
@@ -77,6 +77,6 @@ Dans VictoriaLogs, l'événement Kubescape nomme le pod ciblé par la démo.
 
 ![Détail de l'alerte Kubescape dans Grafana Explore](assets/demo/P3-06h.png)
 
-Dans Policy Reporter, la base dépréciée apparaît en `fail` et non en `warn` : une limite des policies CEL, documentée dans l'[ADR 0002](decisions/0002-kyverno-cel.md).
+Dans Policy Reporter, la base dépréciée apparaît en `fail` et non en `warn` : un comportement des policies CEL, documenté dans l'[ADR 0002](decisions/0002-kyverno-cel.md).
 
 ![PolicyReport de la base dépréciée](assets/demo/P3-07d.png)

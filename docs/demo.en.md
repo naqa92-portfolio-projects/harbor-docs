@@ -36,8 +36,8 @@ Run in a namespace without a tier label, any scenario is denied by `tier-require
 | `demo:runtime-shell` | Open a shell in a running governed container | Kubescape alert `Unexpected process launched` within seconds, visible in Grafana | Governance does not stop at admission |
 | `demo:vex` | Replay the Harbor event of a golden image | Dependency-Track receives the attested SBOM and accepts the vendor VEX (`COMPLETED`) | Triage runs on what was signed at build time |
 
-!!! warning "Accepted limit"
-    The `demo:vex` scenario proves that the VEX is accepted and processed, **not** that every Debian flaw shows as "not affected". Dependency-Track does not yet match Debian source and binary packages (upstream bug). See [Known limits](limites.md).
+!!! note "Worth noting"
+    The `demo:vex` scenario proves that the VEX is accepted and processed, **not** that every Debian flaw shows as "not affected". Dependency-Track does not yet match Debian source and binary packages (upstream change tracked). See [Next steps](limites.md).
 
 ## Recorded walkthroughs
 
@@ -55,7 +55,7 @@ In Harbor, the `hello-java` image is signed and carries four accessories: the si
 
 ![Signed hello-java artifact in Harbor](assets/demo/P2-03.png)
 
-The provenance accessory has the type `https://slsa.dev/provenance/v1`. Harbor shows them all as `signature.cosign`, a known display limit.
+The provenance accessory has the type `https://slsa.dev/provenance/v1`. Harbor shows them all as `signature.cosign`, a display quirk.
 
 ![Actual accessory type: SLSA v1 provenance](assets/demo/P2-03c.png)
 
@@ -63,7 +63,7 @@ In Dependency-Track, the `hello-java` project lists 1,312 components, those of t
 
 ![Components of the attested SBOM in Dependency-Track](assets/demo/P2-05.png)
 
-For `golden/python`, no Debian CVE is listed: that is the upstream limit described above, not an absence of flaws.
+For `golden/python`, no Debian CVE is listed: that is the upstream change described above, not an absence of flaws.
 
 ![No Debian CVE listed for golden/python](assets/demo/P2-fin.png)
 
@@ -77,6 +77,6 @@ In VictoriaLogs, the Kubescape event names the pod targeted by the demo.
 
 ![Kubescape alert detail in Grafana Explore](assets/demo/P3-06h.png)
 
-In Policy Reporter, the deprecated base shows as `fail` rather than `warn`: a limit of CEL policies, documented in [ADR 0002](decisions/0002-kyverno-cel.md).
+In Policy Reporter, the deprecated base shows as `fail` rather than `warn`: a behaviour of CEL policies, documented in [ADR 0002](decisions/0002-kyverno-cel.md).
 
 ![PolicyReport of the deprecated base](assets/demo/P3-07d.png)

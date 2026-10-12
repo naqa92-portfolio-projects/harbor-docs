@@ -24,7 +24,7 @@ harbor-lab decides which container images may run on the cluster. This page stat
 
 Only platform administrators (cluster admins and Argo CD, which syncs labels from Git) choose a tier. Someone allowed to edit a namespace can put it in `workload`, but can neither remove the label, change it, nor choose `platform` (policy `tier-label`).
 
-!!! note "An honest limit"
+!!! note "Worth noting"
     The vendor-signature rules for Cilium and Argo CD only apply when those images run in a `platform` namespace. Here they only run in the excluded `cilium` and `argocd` namespaces. In practice, only Kyverno's images (Policy Reporter, for instance) meet this rule.
 
 ## Bootstrap namespaces: an accepted exclusion
@@ -67,4 +67,4 @@ The flip side: after a merge, the pinned images were signed on the working branc
 | OpenTofu does not see every manual change in Harbor | A replication filter edited in the UI goes unnoticed by `plan` | The Harbor UI is read-only by convention; `tofu apply -replace` restores the rule |
 | `dt-bridge` reads attestations from Harbor | A tampered referrer would mislead triage (not admission, which verifies on its own) | **Fixed**: `dt-bridge` verifies the Sigstore bundles against the build identity and the calling repository |
 | The local CA lacked a `keyUsage` extension | Strict X.509 clients rejected it; `dt-bridge` relaxed Python's verification | **Fixed**: the CA carries a critical `keyUsage`, strict verification stays on |
-| `kubectl debug` bypassed admission | An ephemeral container escaped the workload policies | **Fixed**: the policies also cover `pods/ephemeralcontainers` |
+| Ephemeral container coverage (`kubectl debug`) | An ephemeral container must go through the same policies as a pod | **Fixed**: the policies also cover `pods/ephemeralcontainers` |

@@ -35,7 +35,7 @@ Les providers Crossplane pour Harbor sont abandonnés ou maintenus par une seule
 ## Compromis et coût
 
 - Le credential du cache proxy `dhi.io` et le jeton du webhook n'ont pas d'attribut en écriture seule : ce sont les secrets présents dans l'état chiffré.
-- Le provider ne détecte pas toutes les modifications faites à la main (un filtre de réplication modifié dans l'UI n'apparaît pas comme une dérive ; il faut `-replace`). Voir [Ce qui a cassé](../incidents.md#le-provider-harbor-ne-voit-pas-la-derive-des-filtres).
+- Le provider ne détecte pas toutes les modifications faites à la main (un filtre de réplication modifié dans l'UI n'apparaît pas comme une dérive ; il faut `-replace`). Voir [Retours d'expérience](../incidents.md#derive-des-filtres-de-replication-invisible-pour-opentofu).
 - Faire tourner un secret de robot demande d'incrémenter `secret_wo_version`.
 
 ## Ce qui me ferait changer d'avis

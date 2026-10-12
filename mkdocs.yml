@@ -24,8 +24,8 @@ nav:
       - decisions/0007-signature-keyless.md
       - decisions/0008-divergence-grype-trivy.md
   - Démo: demo.md
-  - Ce qui a cassé: incidents.md
-  - Limites connues: limites.md
+  - Retours d'expérience: incidents.md
+  - Prochaines étapes: limites.md
   - Questions d'entretien: faq.md
 
 theme:
@@ -78,8 +78,8 @@ plugins:
             Modèle de menace: Threat model
             Décisions: Decisions
             Démo: Demo
-            Ce qui a cassé: What broke
-            Limites connues: Known limits
+            Retours d'expérience: Lessons learned
+            Prochaines étapes: Next steps
             Questions d'entretien: Interview questions
 
 markdown_extensions:

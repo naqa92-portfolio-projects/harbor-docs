@@ -54,8 +54,8 @@ Tout tourne sur **un seul cluster local [kind](https://kind.sigs.k8s.io/)** : le
     1. [Architecture](architecture.md) : les briques et les niveaux de confiance.
     2. [Modèle de menace](modele-de-menace.md) : ce que l'admission vérifie, et les exceptions assumées.
     3. Deux décisions : [signature keyless](decisions/0007-signature-keyless.md) et [Kyverno CEL](decisions/0002-kyverno-cel.md).
-    4. [Ce qui a cassé](incidents.md) : les bugs amont contournés et ce qu'ils m'ont appris.
-    5. [Limites connues](limites.md) : ce que je ne prétends pas couvrir.
+    4. [Retours d'expérience](incidents.md) : les problèmes rencontrés, comment ils ont été résolus, ce que j'en retiens.
+    5. [Prochaines étapes](limites.md) : le périmètre de la première version et la suite.
 
 ## Ce que je montrerais en démo
 
