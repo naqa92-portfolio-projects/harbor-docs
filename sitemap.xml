@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/architecture/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/architecture/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/demo/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/demo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/demo/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/faq/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/faq/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/incidents/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/incidents/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/incidents/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/limites/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/limites/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/limites/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/modele-de-menace/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/modele-de-menace/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/modele-de-menace/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0001-format-signature-replication/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0001-format-signature-replication/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0001-format-signature-replication/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0002-kyverno-cel/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0002-kyverno-cel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0002-kyverno-cel/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0003-kubescape/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0003-kubescape/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0003-kubescape/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0004-dependency-track-dt-bridge/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0004-dependency-track-dt-bridge/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0004-dependency-track-dt-bridge/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0005-opentofu-goharbor/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0005-opentofu-goharbor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0005-opentofu-goharbor/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0006-miroir-transparent-niveaux-confiance/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0006-miroir-transparent-niveaux-confiance/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0006-miroir-transparent-niveaux-confiance/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0007-signature-keyless/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0007-signature-keyless/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0007-signature-keyless/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0008-divergence-grype-trivy/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0008-divergence-grype-trivy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0008-divergence-grype-trivy/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/architecture/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/architecture/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/architecture/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/demo/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/demo/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/demo/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/faq/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/faq/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/faq/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/incidents/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/incidents/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/incidents/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/limites/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/limites/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/limites/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/modele-de-menace/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/modele-de-menace/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/modele-de-menace/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0001-format-signature-replication/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0001-format-signature-replication/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0001-format-signature-replication/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0002-kyverno-cel/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0002-kyverno-cel/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0002-kyverno-cel/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0003-kubescape/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0003-kubescape/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0003-kubescape/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0004-dependency-track-dt-bridge/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0004-dependency-track-dt-bridge/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0004-dependency-track-dt-bridge/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0005-opentofu-goharbor/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0005-opentofu-goharbor/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0005-opentofu-goharbor/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0006-miroir-transparent-niveaux-confiance/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0006-miroir-transparent-niveaux-confiance/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0006-miroir-transparent-niveaux-confiance/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0007-signature-keyless/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0007-signature-keyless/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0007-signature-keyless/"/>
+    </url>
+    <url>
+        <loc>https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0008-divergence-grype-trivy/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://naqa92-portfolio-projects.github.io/harbor-docs/en/decisions/0008-divergence-grype-trivy/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://naqa92-portfolio-projects.github.io/harbor-docs/decisions/0008-divergence-grype-trivy/"/>
+    </url>
+</urlset>
